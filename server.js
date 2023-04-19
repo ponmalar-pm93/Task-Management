@@ -7,7 +7,7 @@ const logger = require('morgan');
 
 const app = express();
 
-const API_PORT = process.env.API_PORT || 3005;
+const API_PORT = process.env.API_PORT || 3000;
 
 app.use(Cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,8 +19,16 @@ require('./routes/registerUser.js')(app);
 require('./routes/findUsers.js')(app);
 require('./routes/deleteUser.js')(app);
 require('./routes/updateUser.js')(app);
-require('./routes/createProject.js')(app);
-require('./routes/taskController.js')(app);
+require('./routes/allUser.js')(app);
+
+require('./routes/createTask.js')(app);
+require('./routes/findTask.js')(app);
+require('./routes/deleteTask.js')(app);
+require('./routes/updateTask.js')(app);
+require('./routes/allTask.js')(app);
+
+
+//require('./routes/taskController.js')(app);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
 

@@ -1,4 +1,4 @@
-const User = require('../sequelize')
+const {User} = require('../sequelize')
 const bcrypt = require('bcryptjs');
 const verifyToken = require('../auth/verifyToken')
 //import User from '../sequelize.js';

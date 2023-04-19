@@ -1,10 +1,10 @@
-const User = require('../sequelize');
+const {User} = require('../sequelize');
 const verifyToken = require('../auth/verifyToken');
 //import User from '../sequelize.js';
 //import verifyToken from '../auth/verifyToken';
 
 module.exports = app => {
-  app.get('/findUser', verifyToken, (req, res, next) => {
+  app.get('/findUser', verifyToken, (req, res) => {
     if (req.userId === req.query.username) {
       User.findOne({
         where: {

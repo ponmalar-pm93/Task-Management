@@ -1,5 +1,8 @@
+const project = require("./project");
+
 module.exports = (sequelize, type) => {
-    return sequelize.define('user', {//call user model
+    //return sequelize.define('user', {//call user model
+    const User = sequelize.define('user',{
       id: {
         type: type.INTEGER,
         primaryKey: true,
@@ -16,6 +19,9 @@ module.exports = (sequelize, type) => {
         type: type.STRING,
         allowNull: false,
       },
+
+      
+
     //    role:
     //    {
     //      type:type.STRING,
@@ -23,5 +29,8 @@ module.exports = (sequelize, type) => {
     //      //default:User,
     //    }
      });
+     User.hasMany(project);
+
+     return User;
   };
-  
+  //module.exports=User;

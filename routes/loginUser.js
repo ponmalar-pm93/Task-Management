@@ -1,4 +1,4 @@
-const User = require('../sequelize.js')
+const {User} = require('../sequelize.js');
 const bcrypt = require('bcryptjs');
 const jwtSecret = require('../config/jwtConfig');
 const jwt = require('jsonwebtoken');
