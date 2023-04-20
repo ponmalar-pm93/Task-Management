@@ -10,7 +10,7 @@ app.get('/userTask', async(req, res) => {
     const data = await User.findOne({
       include: [{
         model: Task,
-        as:'Task'
+        as:'tasks'
       }],
       where: { id: id }
     });
