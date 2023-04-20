@@ -8,10 +8,7 @@ app.get('/userTask', async(req, res) => {
       return res.status(400).json({error: "Please provide a valid id"});
     }
     const data = await User.findOne({
-      include: [{
-        model: Task,
-        as:'tasks'
-      }],
+      include:Task ,
       where: { id: id }
     });
     res.status(200).send(data);

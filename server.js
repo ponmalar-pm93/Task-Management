@@ -28,7 +28,7 @@ require('./routes/updateTask.js')(app);
 require('./routes/allTask.js')(app);
 require('./routes/userTask.js')(app);
 
-//require('./routes/taskController.js')(app);
+require('./routes/comment.js')(app);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
 

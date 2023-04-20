@@ -1,5 +1,5 @@
   module.exports = (sequelize) => {
-    return sequelize.define('commentModel', {
+    const Comment= sequelize.define('commentModel', {
   comment: [{
     type: String,
     date: Date
@@ -12,8 +12,10 @@
     type: Date,
     default: Date.now
   }
-});
-
+    });
+//Comment.belongsTo(User, { as: 'commentedBy', foreignKey: 'commentedBy' });
+    
+    return Comment;
   }
   
 

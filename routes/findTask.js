@@ -3,7 +3,6 @@ const {Task} = require('../sequelize')
 module.exports = app => {
   app.get('/findTask', (req, res) => {
     const title = req.query.title;
-
     if (title) {
       Task.findOne({
         where: {

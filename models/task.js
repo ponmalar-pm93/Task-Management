@@ -28,15 +28,11 @@ module.exports = (sequelize,type) => {
         }
       }
     },
-    // assignee: {
-    //   type: type.INTEGER,
-    //   allowNull: false,
-    // }
+    
   });
 
-  //ProjectModel.associate = (models) => {
-    //ProjectModel.belongsTo(models.user, { foreignKey: 'assignee_id' });
-  //};
+  
 
+  
   return TaskModel;
 };

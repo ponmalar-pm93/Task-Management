@@ -1,4 +1,4 @@
-const project = require("./task");
+//const project = require("./task");
 
 module.exports = (sequelize, type) => {
     //return sequelize.define('user', {//call user model
@@ -29,16 +29,5 @@ module.exports = (sequelize, type) => {
     //      //default:User,
     //    }
      });
-     User.associate = (models) => {
-      User.hasMany(models.Project, { foreignKey: 'assignee_id' });
-    };
-  
-    return User;
-  };
-    //  User.hasMany(project);
-    //user.hasMany(project, { foreignKey: 'assignee_id' });
-
-
-    //  return User;
-  
-  //module.exports=User;
+     //User.hasMany(Comment, { as: 'comments', foreignKey: 'commentedBy' });
+    }    
