@@ -1,6 +1,6 @@
 //const project = require('../models/project');
 //const Project = require('../sequelize');
-const {Project} =require('../sequelize')
+const {Task} =require('../sequelize')
 
 // create project
 module.exports = app => {
@@ -15,18 +15,18 @@ app.post('/createTask' ,  (req, res) => {
     if (data.description === '' || data.title === '') {
       res.json('title and description required');
     }
-    Project.findOne({
+    Task.findOne({
       where: {
         title: data.title,
       },
     })
-      .then(project => {
-        if (project != null) {
+      .then(task => {
+        if (task != null) {
           console.log('title already taken');
           res.json('title already taken');
          } else {
            
-               Project.create({
+               Task.create({
                  title: data.title,
                  description: data.description,
                  
@@ -34,8 +34,8 @@ app.post('/createTask' ,  (req, res) => {
                })
               
               .then(() => {
-                 console.log('project created in db');
-                 res.status(200).send({ message: 'project created' });
+                 console.log('task created in db');
+                 res.status(200).send({ message: 'task created' });
                });
               }
               }

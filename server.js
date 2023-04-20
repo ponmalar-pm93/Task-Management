@@ -26,7 +26,7 @@ require('./routes/findTask.js')(app);
 require('./routes/deleteTask.js')(app);
 require('./routes/updateTask.js')(app);
 require('./routes/allTask.js')(app);
-
+require('./routes/userTask.js')(app);
 
 //require('./routes/taskController.js')(app);
 

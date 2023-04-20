@@ -1,4 +1,4 @@
-const {Project} = require('../sequelize');
+const {Task} = require('../sequelize');
 module.exports = app => {
     
           // Update project by title
@@ -10,19 +10,19 @@ module.exports = app => {
             }
         
             try {
-              const project = await Project.findOne({ where: { title } });
+              const task = await Task.findOne({ where: { title } });
         
-              if (!project) {
-                return res.status(404).send({ message: 'Project not found' });
+              if (!task) {
+                return res.status(404).send({ message: 'Task not found' });
               }
         
-              await Project.update({ description }, { where: { title } });
+              await Task.update({ description }, { where: { title } });
         
-              console.log('project updated in db');
-              res.status(200).send({ message: 'project updated' });
+              console.log('task updated in db');
+              res.status(200).send({ message: 'task updated' });
             } catch (error) {
               console.error(error);
-              res.status(500).send({ message: 'Error updating project' });
+              res.status(500).send({ message: 'Error updating task' });
             }
           });
         };

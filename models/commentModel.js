@@ -15,3 +15,37 @@
 });
 
   }
+  
+
+
+
+// Comment model
+// const Comment = sequelize.define('comment', {
+//   content: {
+//     type: Sequelize.TEXT,
+//     allowNull: false,
+//   },
+//   // other fields
+// });
+
+// Attachment model
+// const Attachment = sequelize.define('attachment', {
+//   filename: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//   },
+//   // other fields
+// });
+
+// // Set up the associations
+// User.hasMany(Project);
+// Project.belongsTo(User);
+
+// Task.hasMany(Comment);
+// Comment.belongsTo(Task);
+
+// Task.hasMany(Attachment);
+// Attachment.belongsTo(Task);
+
+// User.belongsToMany(Task, { through: 'TaskUser' });
+// Task.belongsToMany(User, { through: 'TaskUser' });

@@ -1,29 +1,29 @@
-const ProjectModel = require('../sequelize');
+const TaskModel = require('../sequelize');
 
 module.exports = app => {
   app.delete('/deleteTask', (req, res) => {
     const title = req.query.title;
 
     if (title) {
-      ProjectModel.findOne({
+      TaskModel.findOne({
         where: {
           title: title,
         },
       })
-        .then(project => {
-          if (project != null) {
-            ProjectModel.destroy({
+        .then(task => {
+          if (task != null) {
+            TaskModel.destroy({
               where: {
                 title: title,
               },
             })
               .then(() => {
-                console.log('project deleted from db');
-                res.status(200).send({ message: 'project deleted' });
+                console.log('task deleted from db');
+                res.status(200).send({ message: 'task deleted' });
               });
           } else {
-            console.log('project not found in db');
-            res.status(404).json('no project with that title to delete');
+            console.log('task not found in db');
+            res.status(404).json('no task with that title to delete');
           }
         });
     } else {
