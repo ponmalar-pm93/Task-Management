@@ -20,6 +20,7 @@ require('./routes/findUsers.js')(app);
 require('./routes/deleteUser.js')(app);
 require('./routes/updateUser.js')(app);
 require('./routes/allUser.js')(app);
+require('./routes/singleUser.js')(app);
 
 require('./routes/createTask.js')(app);
 require('./routes/findTask.js')(app);
@@ -28,7 +29,11 @@ require('./routes/updateTask.js')(app);
 require('./routes/allTask.js')(app);
 require('./routes/userTask.js')(app);
 
+
 require('./routes/comment.js')(app);
+
+
+//require('./routes/comment.js')(app);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
 

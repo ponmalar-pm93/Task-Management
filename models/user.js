@@ -1,5 +1,7 @@
 //const project = require("./task");
 
+const { Model } = require("sequelize");
+
 module.exports = (sequelize, type) => {
     //return sequelize.define('user', {//call user model
     const User = sequelize.define('user',{
@@ -29,5 +31,13 @@ module.exports = (sequelize, type) => {
     //      //default:User,
     //    }
      });
-     //User.hasMany(Comment, { as: 'comments', foreignKey: 'commentedBy' });
+     User.associate = models =>
+     {
+      User.hasMany(models.CommentModel,
+        {
+          foreignKey: 'user_id'
+        });
+     }
+     return User;
     }    
+    
