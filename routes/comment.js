@@ -4,18 +4,18 @@ const { Comment } = require('../sequelize');
 // Create a new comment
 module.exports = app => {
   app.post('/comment', async (req, res,next) => {
-    const id = req.params.userId;
+    //const id = req.params.user_id;
     try {
       // Retrieve the user who is making the comment
-      const commentedBy = await User.findByPk(req.body.userId);
-      //require.userId =userId;
+      const commentedBy = await User.findByPk(req.body.user_id);
+      console.log("commentedBy", commentedBy);
+      console.log(commentedBy.id);
       // Create the new comment
-      const newComment = await Comment.create({
+      let newComment = await Comment.create({
         comment: req.body.comment,
         date: new Date(),
-        UserId: commentedBy.id
+        user_id: commentedBy.id
       });
-
       res.status(201).json({ message: 'Comment created successfully', comment: newComment });
     } catch (error) {
       console.error(error);

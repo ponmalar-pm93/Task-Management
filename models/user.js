@@ -1,6 +1,7 @@
 //const project = require("./task");
 
-const { Model } = require("sequelize");
+const { User } = require("sequelize");
+const {Task} = require('sequelize');
 
 module.exports = (sequelize, type) => {
     //return sequelize.define('user', {//call user model
@@ -21,23 +22,25 @@ module.exports = (sequelize, type) => {
         type: type.STRING,
         allowNull: false,
       },
-
       
-
-    //    role:
-    //    {
-    //      type:type.STRING,
-    //      //enum:["Admin", "Growth Leader", "User"],
-    //      //default:User,
-    //    }
-     });
-     User.associate = models =>
-     {
-      User.hasMany(models.CommentModel,
-        {
-          foreignKey: 'user_id'
-        });
-     }
-     return User;
-    }    
+      
+      
+      // role: {
+      //   type: type.ENUM['User', 'Admin'],
+      //   defaultValue: 'User',
+      //   allowNull: false,
+      // }
+      
+      
+      
+     } )
+    
+    //User.hasMany(TaskModel)  ;
+   // User.hasMany(Task);
+    //User.hasMany(Task,{as: 'tasks', foreignKey: 'userId'})
+    //User.hasMany(Task, {primaryKey: 'id', targetKey: 'local_user_id'});
+    return User;
+};
+    
+     
     

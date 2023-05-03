@@ -9,10 +9,9 @@ module.exports = app => {
 app.post('/createTask' ,  (req, res) => {
   
     const data = {
-      
+      image: req.file.path,
       title: req.body.title,
       description: req.body.description,
-      //user_id: req.body.user_id
       
       
     };
@@ -33,7 +32,7 @@ app.post('/createTask' ,  (req, res) => {
                Task.create({
                  title: data.title,
                  description: data.description,
-                 //user_id: data.user_id,
+                 
                  
                })
               
@@ -54,4 +53,30 @@ app.post('/createTask' ,  (req, res) => {
   ;
 
 
-    
+    //console.log(req.body);
+//     const info = {
+//       _id:req.body._id,
+//       title: req.body.title,
+//       description: req.body.description,
+      
+//     };
+
+// if (!req.body.title) {
+//   res.status(400).send({
+//     message: "Content can not be empty!",
+//   });
+//   return;
+// }
+// // save Project in the database
+// try {
+//   const project =  ProjectModel.create(info);
+//   res.status(200).send(project);
+//   console.log(project);
+// } catch (err) {
+//   res.status(500).send({
+//     message: err.message || "Error occurred while creating the Project",
+//   });
+// }
+// });
+// }
+

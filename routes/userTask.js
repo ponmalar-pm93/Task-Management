@@ -18,18 +18,3 @@ app.get('/userTask', async(req, res) => {
 
 
 
-
-  // //const getUserTask = async (req,res) => 
-  // {
-  //     const id = req.params._id
-  //     const data = await User.findOne({
-  //         include: [{
-  //             model: Project,
-  //             as: 'projects'
-  //         }],
-  //         where: { id: id}
-  //     })
-  // res.status(200).send(data)
-  // }
-  //     })
-  // }

@@ -1,8 +1,8 @@
-  //const {CommentModel} = require("../sequelize");
+  const {Comment} = require("../sequelize");
   
   
    module.exports = (sequelize,type) => {
-    const CommentModel= sequelize.define('comment', {
+    const Comment= sequelize.define('comment', {
       comment: {
         type: type.STRING,
         allowNull: false,
@@ -17,27 +17,25 @@
         type: type.INTEGER,
         autoIncrement: true,
         primaryKey: true
+      },
+      user_id:
+      {
+        type: type.INTEGER,
+        primaryKey:true,
       }
     });
-    CommentModel.associate = (models) => {
-      CommentModel.belongsTo(models.User, {
-        foreignKey: 'user_id'
-      })
+    // CommentModel.associate = (sequelize) =>
+    //  {
+    //   CommentModel.belongsTo(sequelize.User, 
+    //     {
+    //     foreignKey: 'user_id'
+    //   })
     }
   
-  // comment: {
-  //   type: String,
-  //   date: Date,
-  // },
- 
-  // date: {
-  //   type: Date,
-  //   default: Date.now,
-  // }
-  //   });
   
-    return CommentModel;
-  }
+  
+    return Comment;
+  
   
 
 

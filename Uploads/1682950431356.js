@@ -31,8 +31,8 @@ require('./routes/deleteTask.js')(app);
 require('./routes/updateTask.js')(app);
 require('./routes/allTask.js')(app);
 require('./routes/userTask.js')(app);
+require('./routes/assignTask.js')(app);
 
-require('./routes/download.js')(app);
 
 require('./routes/comment.js')(app);
 

@@ -12,7 +12,10 @@ module.exports = app => {
       email: req.body.email,
       username: req.body.username,
       password: req.body.password,
+      
+     //role: req.body.role || 'user', // default role is "user"
     };
+    //console.log("role ",role);
     if (data.password === '' || data.username === '') {
       res.json('username and password required');
     }
@@ -35,6 +38,8 @@ module.exports = app => {
                  email: data.email,
                  username: data.username,
                  password: hashedPassword,
+                 
+                 //role: data.role === 'admin' ? 'admin' : 'user', // assign "admin" role if specified
                }).then(() => {
                  console.log('user created in db');
                  res.status(200).send({ message: 'user created' });
