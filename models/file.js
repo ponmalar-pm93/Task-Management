@@ -5,10 +5,9 @@ const File = sequelize.define('file',
 
     fileName: type.STRING,
     filePath: type.STRING,
-    // user_id:
-    // { type:type.INTEGER,
-    //   primarykey:true,
-    // }
+     user_id:
+     { type:type.INTEGER,
+     }
   });
   return File;
 }

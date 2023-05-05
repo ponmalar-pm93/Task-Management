@@ -32,7 +32,7 @@ module.exports = (sequelize,type) => {
     user_id:
     {
       type: type.INTEGER,
-      primaryKey:true,
+      //primaryKey:true,
     }
   });
 //Task.belongsTo(User);

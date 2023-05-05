@@ -21,7 +21,7 @@
       user_id:
       {
         type: type.INTEGER,
-        primaryKey:true,
+        
       }
     });
     // CommentModel.associate = (sequelize) =>

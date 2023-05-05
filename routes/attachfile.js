@@ -20,7 +20,7 @@ app.post('/attachfile', upload.single('file'), (req, res) => {
   File.create({
     fileName: filename,
     filePath:filePath,
-    user_id: user_id
+    user_id: user_id,
   })
   
   .then(file => {

@@ -23,13 +23,12 @@ module.exports = (sequelize, type) => {
         allowNull: false,
       },
       
-      
-      
-      // role: {
-      //   type: type.ENUM['User', 'Admin'],
-      //   defaultValue: 'User',
-      //   allowNull: false,
-      // }
+           
+       role: {
+         type: type.ENUM("user","admin"),
+         defaultValue: 'user',
+         allowNull: false,
+       }
       
       
       

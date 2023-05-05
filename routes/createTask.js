@@ -12,7 +12,7 @@ app.post('/createTask' ,  (req, res) => {
       
       title: req.body.title,
       description: req.body.description,
-      //user_id: req.body.user_id
+      user_id: req.body.user_id
       
       
     };
@@ -33,7 +33,7 @@ app.post('/createTask' ,  (req, res) => {
                Task.create({
                  title: data.title,
                  description: data.description,
-                 //user_id: data.user_id,
+                 user_id: data.user_id,
                  
                })
               
