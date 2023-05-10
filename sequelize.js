@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const UserModel = require('./models/user');
 const TaskModel = require('./models/task');
-const CommentModel =require('./models/comment');
+const CommentModel = require('./models/comment');
 const FileModel = require('./models/file');
 
 

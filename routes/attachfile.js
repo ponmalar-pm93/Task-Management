@@ -1,5 +1,5 @@
 const { File} = require('../sequelize');
-//const {Task} =require('../sequelize')
+const {User} =require('../sequelize')
 const multer = require('multer');
 const path = require('path');
 
@@ -16,7 +16,14 @@ const upload = multer({
 module.exports = app => {
 app.post('/attachfile', upload.single('file'), (req, res) => {
   
-  const { filename, path: filePath ,user_id} = req.file;
+  const { filename, path: filePath } = req.file;
+  const user_id = req.body.user_id; // Get the user ID from the request body
+
+    User.findByPk(user_id) // Find the user by ID
+      .then(user => {
+        if (!user) {
+          throw new Error(`User with ID ${user_id} not found`);
+        }
   File.create({
     fileName: filename,
     filePath:filePath,
@@ -30,10 +37,10 @@ app.post('/attachfile', upload.single('file'), (req, res) => {
     res.status(500).json(err);
   });
 });
- }
+ })
 
 
-
+}
 
 
 

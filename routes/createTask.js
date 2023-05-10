@@ -1,5 +1,3 @@
-//const project = require('../models/project');
-//const Project = require('../sequelize');
 const {Task} =require('../sequelize')
 const { File} = require('../sequelize');
 const multer = require('multer');

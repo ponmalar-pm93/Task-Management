@@ -33,7 +33,16 @@ module.exports = (sequelize,type) => {
     {
       type: type.INTEGER,
       //primaryKey:true,
-    }
+    },
+    status: {
+      type: type.ENUM("ToDo", "In Progress", "Completed", "Close"),
+      defaultValue: 'ToDo',
+      allowNull: false,
+      validate: {
+        len: [0, 20] // set the minimum and maximum length for the column
+      }
+    },
+
   });
 //Task.belongsTo(User);
 //Task.belongsTo(User, {foreignKey: 'userId'});

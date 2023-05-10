@@ -36,9 +36,7 @@ require('./routes/download.js')(app);
 require('./routes/upload.js')(app);
 require('./routes/assignTask.js')(app);
 require('./routes/comment.js')(app);
-
-
-//require('./routes/attachfile.js')(app);
+require('./routes/taskStatus.js')(app);
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
 

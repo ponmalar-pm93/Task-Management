@@ -8,7 +8,7 @@ const fs = require('fs');
 module.exports = app => {
   app.get('/download', (req, res) => {
     const fileName = req.query.fileName;
-
+const  filePath = req.query.filePath;
     // Find the file by ID in the database
     File.findOne({ where: { fileName: fileName} })
       .then(file => {
@@ -17,7 +17,7 @@ module.exports = app => {
         }
 
         // Construct the path to the file on disk
-        const filePath = path.join(__dirname, '..', file.filePath);
+         filePath = path.join(__dirname, '..', file.filePath);
 
         // Read the file from disk and stream it to the client
         const fileStream = fs.createReadStream(filePath);

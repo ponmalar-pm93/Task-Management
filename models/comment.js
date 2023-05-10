@@ -1,8 +1,7 @@
-  const {Comment} = require("../sequelize");
-  
-  
+  const { Comment } = require("../sequelize");
+   
    module.exports = (sequelize,type) => {
-    const Comment= sequelize.define('comment', {
+    const Comment = sequelize.define('comment', {
       comment: {
         type: type.STRING,
         allowNull: false,
@@ -21,6 +20,10 @@
       user_id:
       {
         type: type.INTEGER,
+      },
+      username:
+      {
+        type: type.STRING,
         
       }
     });
@@ -30,12 +33,12 @@
     //     {
     //     foreignKey: 'user_id'
     //   })
-    }
+    
   
   
   
     return Comment;
-  
+   };
   
 
 
