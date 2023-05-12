@@ -34,6 +34,10 @@ module.exports = (sequelize,type) => {
       type: type.INTEGER,
       //primaryKey:true,
     },
+    // assigned_to: {
+    //   type: type.STRING,
+    //   allowNull: true,
+    // },
     status: {
       type: type.ENUM("ToDo", "In Progress", "Completed", "Close"),
       defaultValue: 'ToDo',

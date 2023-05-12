@@ -16,7 +16,7 @@ module.exports = app => {
                 return res.status(404).send({ message: 'Task not found' });
               }
         
-              await Task.update({ description },{ user_id }, { where: { title } });
+              await Task.update({ description }, { where: { title } });
         
               console.log('task updated in db');
               res.status(200).send({ message: 'task updated' });
